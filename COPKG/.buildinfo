@@ -1,0 +1,47 @@
+/* target information */
+
+#product-info  {
+	product-name: "pcre";
+	version: "5.0";
+	original-source-location: "";
+	original-source-website: "http://www.pcre.org/";
+	license: "BSD License";
+	packager: "Hamish C";
+}
+
+x86 {
+    compiler: vc10-x86;
+    
+    targets: { 
+		"dftables.exe",
+		"LibR\pcre.lib",
+	};
+	
+    build-command:@"
+		msbuild /p:Platform=win32 /p:Configuration=Release pcre.sln
+	";
+    
+    clean-command:@"
+       if exist LibR rmdir /s /q LibR > nul 2> nul
+       if exist Release rmdir /s /q Release > nul 2> nul
+       del /S /Q /A - *.sdf *.suo *.user *.exe *.pdb  > nul 2>NUL
+    ";
+};
+
+x64 {
+    compiler: vc10-x64;
+
+	targets: { 
+		"x64\dftables.exe",
+		"x64\LibR\pcre.lib",
+	};
+	
+    build-command:@"
+        msbuild /p:Platform=x64 /p:Configuration=Release pcre.sln
+    ";
+    clean-command:@"
+       if exist x64\LibR rmdir /s /q x64\LibR > nul 2> nul
+       if exist x64\Release rmdir /s /q x64\Release > nul 2> nul
+       del /S /Q /A - *.sdf *.suo *.user *.exe *.pdb  > nul 2>NUL
+    ";
+};
