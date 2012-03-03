@@ -79,17 +79,17 @@
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>.\</OutDir>
+    <OutDir>.\output\x86\Release\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>.\x64\</OutDir>
+    <OutDir>.\output\x64\Release\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IntDir>.\Release\</IntDir>
+    <IntDir>.\output\x86\Release\</IntDir>
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IntDir>.\x64\Release\</IntDir>
+    <IntDir>.\output\x64\Release\</IntDir>
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -150,17 +150,17 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>HAVE_CONFIG_H;_WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
-      <PrecompiledHeaderOutputFile>.\Release\dftables.pch</PrecompiledHeaderOutputFile>
-      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
-      <ObjectFileName>.\Release\</ObjectFileName>
-      <ProgramDataBaseFileName>Release\dftables</ProgramDataBaseFileName>
+      <PrecompiledHeaderOutputFile>.\output\x86\Release\dftables.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\output\x86\Release\</AssemblerListingLocation>
+      <ObjectFileName>.\output\x86\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\output\x86\Release\dftables</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <EnableCOMDATFolding>
       </EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <OutputFile>.\dftables.exe</OutputFile>
+      <OutputFile>.\output\x86\Release\dftables.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <AdditionalDependencies>kernel32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
@@ -177,17 +177,17 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>HAVE_CONFIG_H;_WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
-      <PrecompiledHeaderOutputFile>.\x64\Release\dftables.pch</PrecompiledHeaderOutputFile>
-      <AssemblerListingLocation>.\x64\Release\</AssemblerListingLocation>
-      <ObjectFileName>.\x64\Release\</ObjectFileName>
-      <ProgramDataBaseFileName>x64\Release\dftables</ProgramDataBaseFileName>
+      <PrecompiledHeaderOutputFile>.\output\x64\Release\dftables.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\output\x64\Release\</AssemblerListingLocation>
+      <ObjectFileName>.\output\x64\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\output\x64\Release\dftables</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <EnableCOMDATFolding>
       </EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <OutputFile>.\x64\dftables.exe</OutputFile>
+      <OutputFile>.\output\x64\Release\dftables.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <AdditionalDependencies>kernel32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>

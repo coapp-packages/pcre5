@@ -1,0 +1,8 @@
+// details for x64 version of pcre package
+// build with: autopackage pcre-dev[vc10]-x64.autopkg
+@import "pcre5-dev.inc" ;
+
+#define { 
+    flavor: "vc10"; 
+    arch : "x64";
+}
