@@ -87,8 +87,8 @@ x86 {
     
     targets: { 
 		"output\x86\Release\dftables.exe",
-		"output\x86\LibR\pcre5.lib",
-		"output\x86\LibR\pcre5.dll",
+		"output\x86\LibR\libpcre.lib",
+		"output\x86\LibR\libpcre.dll",
 		"output\x86\LibR\pcre5static.lib",
 	};
 	
@@ -109,8 +109,8 @@ x64 {
 
 	targets: { 
 		"output\x64\Release\dftables.exe",
-		"output\x64\LibR\pcre5.lib",
-		"output\x64\LibR\pcre5.dll",
+		"output\x64\LibR\libpcre.lib",
+		"output\x64\LibR\libpcre.dll",
 		"output\x64\LibR\pcre5static.lib",
 	};
 	

@@ -28,7 +28,7 @@ files[dlls] {
     root: @"..\output\${arch}\LibR";
   
     include: {
-        "pcre5.dll",
+        "libpcre.dll",
     };
     
     trim-path: all;

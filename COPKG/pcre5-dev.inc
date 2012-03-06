@@ -28,7 +28,7 @@ files[libs] {
     
     include: {
         "pcre5static.lib",
-		"pcre5.lib",
+		"libpcre.lib",
     };
     
     trim-path: all;
