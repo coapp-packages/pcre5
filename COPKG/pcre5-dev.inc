@@ -24,7 +24,7 @@ metadata {
 }
 
 files[libs] {
-    root: @"..\output\${arch}\LibR";
+    root: @"..\output\${flavor}\${arch}\LibR";
     
     include: {
         "pcre5static.lib",

@@ -14,7 +14,7 @@ package {
 }
 
 files[exes] {
-    root: @"..\output\${arch}\Release";
+    root: @"..\output\${flavor}\${arch}\Release";
     
     include: {
         "dftables.exe",
@@ -25,7 +25,7 @@ files[exes] {
 
 
 files[dlls] {
-    root: @"..\output\${arch}\LibR";
+    root: @"..\output\${flavor}\${arch}\LibR";
   
     include: {
         "libpcre.dll",
