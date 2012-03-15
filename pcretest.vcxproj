@@ -19,11 +19,21 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="dftables.c" />
+    <ClCompile Include="pcretest.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="pcre.vcxproj">
+      <Project>{36AA001F-7009-4677-8D5B-37D608FE01F4}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{760B4A9F-3FB5-46D4-90B5-19F21E7C024B}</ProjectGuid>
-    <RootNamespace>dftables</RootNamespace>
+    <ProjectGuid>{CDD13FE3-182C-4059-A962-09F394FD8912}</ProjectGuid>
+    <RootNamespace>pcretest</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -97,24 +107,24 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <InlineFunctionExpansion>Default</InlineFunctionExpansion>
-      <PreprocessorDefinitions>HAVE_CONFIG_H;_WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NOPOSIX;HAVE_CONFIG_H;_WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <PrecompiledHeaderOutputFile>.\output\vc10\x86\Debug\dftables.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile>.\output\vc10\x86\Debug\pcretest.pch</PrecompiledHeaderOutputFile>
       <AssemblerListingLocation>.\output\vc10\x86\Debug\</AssemblerListingLocation>
       <ObjectFileName>.\output\vc10\x86\Debug\</ObjectFileName>
-      <ProgramDataBaseFileName>output\vc10\x86\Debug\dftables</ProgramDataBaseFileName>
+      <ProgramDataBaseFileName>output\vc10\x86\Debug\pcretest</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <OutputFile>.\output\vc10\x86\Debug\dftables.exe</OutputFile>
+      <OutputFile>.\output\vc10\x86\Debug\pcretest.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalDependencies>kernel32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>pcre.lib;kernel32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <Bscmake>
-      <OutputFile>.\dftables.bsc</OutputFile>
+      <OutputFile>.\pcretest.bsc</OutputFile>
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -122,24 +132,24 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <InlineFunctionExpansion>Default</InlineFunctionExpansion>
-      <PreprocessorDefinitions>HAVE_CONFIG_H;_WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NOPOSIX;HAVE_CONFIG_H;_WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <PrecompiledHeaderOutputFile>.\output\vc10\x64\Debug\dftables.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile>.\output\vc10\x64\Debug\pcretest.pch</PrecompiledHeaderOutputFile>
       <AssemblerListingLocation>.\output\vc10\x64\Debug\</AssemblerListingLocation>
       <ObjectFileName>.\output\vc10\x64\Debug\</ObjectFileName>
-      <ProgramDataBaseFileName>output\vc10\x64\Debug\dftables</ProgramDataBaseFileName>
+      <ProgramDataBaseFileName>output\vc10\x64\Debug\pcretest</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <OutputFile>.\output\vc10\x64\dftables.exe</OutputFile>
+      <OutputFile>.\output\vc10\x64\Debug\pcretest.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalDependencies>kernel32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>pcre.lib;kernel32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <Bscmake>
-      <OutputFile>.\dftables.bsc</OutputFile>
+      <OutputFile>.\pcretest.bsc</OutputFile>
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -148,25 +158,25 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>HAVE_CONFIG_H;_WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NOPOSIX;HAVE_CONFIG_H;_WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
-      <PrecompiledHeaderOutputFile>.\output\vc10\x86\Release\dftables.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile>.\output\vc10\x86\Release\pcretest.pch</PrecompiledHeaderOutputFile>
       <AssemblerListingLocation>.\output\vc10\x86\Release\</AssemblerListingLocation>
       <ObjectFileName>.\output\vc10\x86\Release\</ObjectFileName>
-      <ProgramDataBaseFileName>.\output\vc10\x86\Release\dftables</ProgramDataBaseFileName>
+      <ProgramDataBaseFileName>.\output\vc10\x86\Release\pcretest</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <EnableCOMDATFolding>
       </EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <OutputFile>.\output\vc10\x86\Release\dftables.exe</OutputFile>
+      <OutputFile>.\output\vc10\x86\Release\pcretest.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <AdditionalDependencies>kernel32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
     <Bscmake>
-      <OutputFile>.\dftables.bsc</OutputFile>
+      <OutputFile>.\pcretest.bsc</OutputFile>
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -175,25 +185,25 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>HAVE_CONFIG_H;_WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NOPOSIX;HAVE_CONFIG_H;_WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
-      <PrecompiledHeaderOutputFile>.\output\vc10\x64\Release\dftables.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile>.\output\vc10\x64\Release\pcretest.pch</PrecompiledHeaderOutputFile>
       <AssemblerListingLocation>.\output\vc10\x64\Release\</AssemblerListingLocation>
       <ObjectFileName>.\output\vc10\x64\Release\</ObjectFileName>
-      <ProgramDataBaseFileName>.\output\vc10\x64\Release\dftables</ProgramDataBaseFileName>
+      <ProgramDataBaseFileName>.\output\vc10\x64\Release\pcretest</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <EnableCOMDATFolding>
       </EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <OutputFile>.\output\vc10\x64\Release\dftables.exe</OutputFile>
+      <OutputFile>.\output\vc10\x64\Release\pcretest.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <AdditionalDependencies>kernel32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
     <Bscmake>
-      <OutputFile>.\dftables.bsc</OutputFile>
+      <OutputFile>.\pcretest.bsc</OutputFile>
     </Bscmake>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

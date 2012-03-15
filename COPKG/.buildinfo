@@ -14,7 +14,28 @@ test {
     default : false;
     uses: release;
     build-command: @"
-	    rem no tests yet...";
+		setlocal EnableDelayedExpansion
+		set ERR_MSG=Errors found in tests:
+		for %%B in (x86, x64) do (
+			output\vc10\x86\Release\pcretest testdata\testinput1 testdata\test_%%B.testout
+			if ERRORLEVEL 1 (
+				call :msg %%B
+			) else (
+				echo n | comp testdata\test_%%B.testout testdata\testoutput1
+				if ERRORLEVEL 1 call :msg %%B
+			)
+		)
+		if ""Errors found in tests:"" neq ""%ERR_MSG%"" (echo %ERR_MSG% & goto failed)
+		endlocal
+		
+		:msg
+		set ERR_MSG=%ERR_MSG% %1
+		goto :eof
+	";
+	
+	clean-command: @"
+		del testdata\*.testout
+	";
 };
 
 package {
@@ -34,14 +55,11 @@ package {
         REM THERE IS SOME GOOFY STUFF IN HERE TO WORK AROUND A COUPLE BUGS IN AUTOPACKAGE.
         REM FIXES COMING SOON...
         cd COPKG
-        coapp add-feed %cd%\
-        coapp --force-scan list 
+        coapp add-feed ""%cd%""
         autopackage pcre5-dev-common.autopkg || goto failed
         coapp --force-scan list 
         autopackage pcre5[vc10]-x86.autopkg pcre5-dev[vc10]-x86.autopkg || goto failed
-        coapp --force-scan list 
         autopackage pcre5[vc10]-x64.autopkg pcre5-dev[vc10]-x64.autopkg || goto failed
-        coapp --force-scan list 
         coapp remove-feed %cd%\
         ptk update-version
     ";
@@ -80,16 +98,16 @@ sign {
 };
 
 
-
 x86 {
     compiler: vc10;
     platform: x86;
     
     targets: { 
-		"output\x86\Release\dftables.exe",
-		"output\x86\LibR\libpcre.lib",
-		"output\x86\LibR\libpcre.dll",
-		"output\x86\LibR\pcre5static.lib",
+		"output\vc10\x86\Release\dftables.exe",
+		"output\vc10\x86\LibR\libpcre.lib",
+		"output\vc10\x86\LibR\libpcre.dll",
+		"output\vc10\x86\LibR\pcre5static.lib",
+		"output\vc10\x86\Release\pcretest.exe",
 	};
 	
     build-command:@"
@@ -108,10 +126,11 @@ x64 {
     platform: x64;
 
 	targets: { 
-		"output\x64\Release\dftables.exe",
-		"output\x64\LibR\libpcre.lib",
-		"output\x64\LibR\libpcre.dll",
-		"output\x64\LibR\pcre5static.lib",
+		"output\vc10\x64\Release\dftables.exe",
+		"output\vc10\x64\LibR\libpcre.lib",
+		"output\vc10\x64\LibR\libpcre.dll",
+		"output\vc10\x64\LibR\pcre5static.lib",
+		"output\vc10\x64\Release\pcretest.exe",
 	};
 	
     build-command:@"
