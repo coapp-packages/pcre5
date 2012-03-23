@@ -78,7 +78,7 @@ manifest[things-that-need-them] {
     // all of our EXEs need to get the manifest entries for the assemblies we're creating in this package
     
     assembly : {
-        pcre
+        "pcre[${flavor}]"
     };
     
     include : { 
