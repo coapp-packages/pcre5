@@ -86,7 +86,7 @@ manifest[things-that-need-them] {
     };
 }
 
-assembly[pcre] {
+assembly[pcre[${flavor}]] {
     include : {
         dlls
     };

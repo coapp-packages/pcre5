@@ -39,7 +39,7 @@ requires {
     package: "pcre[${flavor}]-${package-version}-${Package.Architecture}-${Package.PublicKeyToken}";
 }
 
-developer-library[pcre] {
+developer-library[pcre[${flavor}]] {
     libraries : {
         libs
     };
